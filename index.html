@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Dev</title>
+
+    <link href="prism.css" rel="stylesheet" />
+    <link href="site.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header></header>
+    <nav></nav>
+
+    <article>
+        <h1>.NET Core</h1>
+        <section>
+            <h2>Exception Handling</h2>
+            <p>
+                To catch unhandled exceptions we can use ExceptionFilters. Filters run within the MVC action invocation pipeline, after MVC
+                has routed the request to the correct action. ExceptionFilters execute before anything has been written to
+                the response body.
+            </p>
+            <p>
+                See the official
+                <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/filters" target="_blank">docs</a> for a full explanation.
+            </p>
+            <p>To add an ExceptionFilter we need to inherit from ExceptionFilterAttribute. We override the OnException method
+                to set the response:</p>
+            <figure>
+                <figcaption>CustomExceptionFilterAttribute.cs</figcaption>
+                <pre>
+                    <code class="language-csharp" contenteditable spellcheck="false">
+public class CustomExceptionFilterAttribute : ExceptionFilterAttribute
+{
+    private readonly ILogger _logger;
+
+    public CustomExceptionFilterAttribute(ILogger logger)
+    {
+        _logger = logger;
+    }
+
+    public override void OnException(ExceptionContext context)
+    {
+        var exception = context.Exception;
+        var message = exception.InnerException?.Message ?? exception.Message;
+        var errorMessage = $"Application error: {message}.  Error was generated from {exception.TargetSite}";
+        context.Result = new ContentResult
+        {
+            Content = $"{exception.Message}",
+            ContentType = "text/plain",
+            StatusCode = (int?)HttpStatusCode.BadRequest
+        };
+        _logger.Error("{User} {Message} {StackTrace}", "me", exception.Message, exception.StackTrace);
+    }
+}
+                    </code>
+                </pre>
+            </figure>
+
+            <p>To register the filter globally, in Startup.cs we can add the custom filter to the Filters collection, passing
+                in any dependencies:</p>
+            <figure>
+                <figcaption>Startup.cs</figcaption>
+                <pre>
+<code class="language-csharp" contenteditable spellcheck="false">
+// Add framework services.
+services.AddMvc(options =>
+{
+    &hellip;
+    options.Filters.Add(new CustomExceptionFilterAttribute(Log.Logger));
+});
+</code>
+    </pre>
+            </figure>
+
+            <p>This can be tested by throwing an exception in an action:</p>
+
+            <figure>
+                <figcaption>MyController.cs</figcaption>
+                <pre>
+                <code class="language-csharp" contenteditable spellcheck="false">
+[HttpGet]
+public IActionResult Get()
+{
+    throw new Exception("test");
+}
+            </code>
+        </pre>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Which assembly does my application use?</h2>
+            <p>.NET will look for the assembly, with the version number against which the code was compiled, first in the GAC
+                then in local files - check out
+                <a href="https://stackoverflow.com/questions/981142/dll-in-both-the-bin-and-the-gac-which-one-gets-used" target="_blank">SO</a> for the full lowdown.</p>
+            <p>If we want to ignore the GAC'd version then we need to increment the build number of the referenced assembly.  This new version can live in the bin folder
+                and will be used in place of the GAC.
+            </p>
+            <p>When referencing assemblies, Forward Versioning is not allowed - an application built in .NET 4 cannot reference an assembly built in .NET 4.5.
+                However, backward compatibility is allowed
+            </p>
+            <p>When deciding which version of an assembly to use, if the project references an assembly using the FQN (fully qualified name) then this version is the one that will be used.
+                Should this not be found at runtime then an exception is thrown.  FQN is in the form "Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+            </p>
+        </section>
+
+        <section>
+            <h2>Public Key Token</h2>
+            <p>What is the role of public key token?
+                
+                The public key token is a small number which is a convenient "token" representing a public key. Public keys are quite long; the purpose of the public key token is to let you refer to keys without saying the whole key. Sort of the same way saying "The Lord of the Rings" is five words which represent a half-a-million-word novel. It would be rather inconvenient if every time you wanted to talk about it, you had to state those half-a-million words.
+                
+                Does it have any part in decrypting the signed hash?
+                
+                No. The public key token has no "information" in it. It's just a number that represents a public key. It is not itself a public key.
+                
+                why are there so many assemblies from Microsoft with the same public key token?
+                
+                Because they were all signed with the same private key -- Microsoft's private key -- and are therefore all verified with the same public key, and therefore all have the same public key token.</p>
+        </section>
+    </article>
+
+    <footer></footer>
+
+    <script src="prism.js"></script>
+</body>
+
+</html>
