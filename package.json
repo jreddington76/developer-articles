@@ -4,12 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "http-server",
+    "start": "react-scripts start",
+    "build": "browserify -t [ browserify-css --minify=true --output bundle.css ] app/js/app.module.js -o bundle.js",
+    "serve": "concurrently \"watchify app/js/app.module.js -o bundle.js\" \"browser-sync start --server -w --files './bundle.js'\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "james reddington",
   "license": "ISC",
   "dependencies": {
-    "prismjs": "^1.9.0"
+    "prismjs": "^1.9.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "^1.1.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.5",
+    "browserify": "^15.1.0",
+    "browserify-css": "^0.14.0",
+    "concurrently": "^3.5.1",
+    "watchify": "^3.9.0"
   }
 }
