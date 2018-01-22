@@ -11,8 +11,7 @@ class ExceptionHandling extends React.Component {
                 the response body.
             </p>
             <p>
-                See the official
-                <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/filters" target="_blank">docs</a> for a full explanation.
+                See the official <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/filters" target="_blank">docs</a> for a full explanation.
             </p>
             <p>To add an ExceptionFilter we need to inherit from ExceptionFilterAttribute. We override the OnException method
                 to set the response:</p>
