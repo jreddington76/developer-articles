@@ -11,9 +11,11 @@
   "author": "james reddington",
   "license": "ISC",
   "dependencies": {
+    "history": "^4.7.2",
     "prismjs": "^1.9.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -26,7 +28,6 @@
     "image-webpack-loader": "^3.4.2",
     "json-loader": "^0.5.7",
     "style-loader": "^0.19.1",
-    "watchify": "^3.9.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1"
   }

@@ -5,7 +5,11 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/main.js',
-    output: { path: __dirname + "/public/", filename: 'bundle.js' },
+    output: {
+        path: __dirname + "/public/",
+        filename: 'bundle.js',
+        publicPath: '/'
+    },
     module: {
         loaders: [
             {
@@ -18,8 +22,8 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loaders: [ 'style-loader', 'css-loader' ]
-              },
+                loaders: ['style-loader', 'css-loader']
+            },
             {
                 test: /\.json$/,
                 loader: "json"
@@ -32,6 +36,9 @@ module.exports = {
                 ]
             }
         ]
+    },
+    devServer: {
+        historyApiFallback: true,
     },
     plugins: [
         new ExtractTextPlugin("main.css"),
