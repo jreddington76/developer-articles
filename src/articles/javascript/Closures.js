@@ -5,7 +5,7 @@ import Prism from 'prismjs';
 class Closures extends React.Component {
     render() {
         return (
-            <section>
+            <section id="closures">
                 <h2>Closures</h2>
                 <p>
                     A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain.
@@ -22,7 +22,7 @@ class Closures extends React.Component {
                 <figure>
                     <figcaption>Example of closure in jquery:</figcaption>
                     <pre>
-                        <code className="language-javascript" contenteditable spellcheck="false">
+                        <code className="language-javascript">
                             {`
 $(function() {
 	​var selections = []; 

@@ -5,7 +5,7 @@ import Prism from 'prismjs';
 class TruthyFalsy extends React.Component {
     render() {
         return (
-            <section>
+            <section id="truthyfalsy">
                 <h2>What does truthy and falsy mean?</h2>
                 <p>
                     Lets see what the offical docs have to say:
@@ -24,7 +24,7 @@ class TruthyFalsy extends React.Component {
                     </p>
                 <figure>
                     <pre>
-                        <code className="language-javascript" contenteditable spellcheck="false">
+                        <code className="language-javascript">
                             {`
 var obj = {};
 
@@ -41,7 +41,7 @@ if (obj){
                 </p>
                 <figure>
                     <pre>
-                        <code className="language-javascript" contenteditable spellcheck="false">
+                        <code className="language-javascript">
                             {`
 if (obj === undefined || obj === null){
     

@@ -5,7 +5,7 @@ import Prism from 'prismjs';
 class Variables extends React.Component {
     render() {
         return (
-            <section>
+            <section id="variables">
                 <h2>Variables</h2>
                 <h3>Variable Scope</h3>
                 <p>
@@ -48,7 +48,7 @@ class Variables extends React.Component {
                 </p>
                 <figure>
                     <pre>
-                        <code className="language-javascript" contenteditable spellcheck="false">
+                        <code className="language-javascript">
                             {`
 var name = 'james'
 `}
@@ -60,7 +60,7 @@ var name = 'james'
                 </p>
                 <figure>
                     <pre>
-                        <code className="language-javascript" contenteditable spellcheck="false">
+                        <code className="language-javascript">
                             {`
 var name;
 name = 'james';
@@ -73,7 +73,7 @@ name = 'james';
                 </p>
                 <figure>
                     <pre>
-                        <code className="language-javascript" contenteditable spellcheck="false">
+                        <code className="language-javascript">
                             {`
 console.log(name);
 var name = 'james';
@@ -91,7 +91,7 @@ james
                 </p>
                 <figure>
                     <pre>
-                        <code className="language-javascript" contenteditable spellcheck="false">
+                        <code className="language-javascript">
                             {`
 var name;
 console.log(name);

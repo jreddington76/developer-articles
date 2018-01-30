@@ -5,7 +5,7 @@ import Prism from 'prismjs';
 class Functions extends React.Component {
     render() {
         return (
-            <section>
+            <section id="functions">
                 <h2>Functions</h2>
                 <h3>Function Declaration</h3>
                 <p>
@@ -14,7 +14,7 @@ class Functions extends React.Component {
                 </p>
                 <figure>
                     <pre>
-                        <code className="language-javascript" contenteditable spellcheck="false">
+                        <code className="language-javascript">
                             {`
 function bar() {
     return 3;
@@ -28,7 +28,7 @@ function bar() {
                 </p>
                 <figure>
                     <pre>
-                        <code className="language-javascript" contenteditable spellcheck="false">
+                        <code className="language-javascript">
                             {`
 bar() //3
 bar  //function
@@ -43,7 +43,7 @@ bar  //function
                 </p>
                 <figure>
                     <pre>
-                        <code className="language-javascript" contenteditable spellcheck="false">
+                        <code className="language-javascript">
                             {`
 //anonymous function expression
 var a = function() {
