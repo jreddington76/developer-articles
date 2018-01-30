@@ -10,6 +10,10 @@
   },
   "author": "james reddington",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jreddington76/developer-articles"
+  },
   "dependencies": {
     "history": "^4.7.2",
     "prismjs": "^1.9.0",
