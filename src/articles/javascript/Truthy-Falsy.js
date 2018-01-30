@@ -24,7 +24,7 @@ class TruthyFalsy extends React.Component {
                     </p>
                 <figure>
                     <pre>
-                        <code className="language-csharp" contenteditable spellcheck="false">
+                        <code className="language-javascript" contenteditable spellcheck="false">
                             {`
 var obj = {};
 
@@ -41,7 +41,7 @@ if (obj){
                 </p>
                 <figure>
                     <pre>
-                        <code className="language-csharp" contenteditable spellcheck="false">
+                        <code className="language-javascript" contenteditable spellcheck="false">
                             {`
 if (obj === undefined || obj === null){
     
@@ -51,7 +51,7 @@ if (obj === undefined || obj === null){
                     </pre>
                 </figure>
                 <p>
-                    We can simply use the syntax in the fist code snippet.
+                    We can simply use the syntax in the first code snippet.
                 </p>
             </section>
         );
