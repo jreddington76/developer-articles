@@ -3,7 +3,7 @@ import React from 'react';
 class ExceptionHandling extends React.Component {
     render() {
         return (
-            <section>
+            <section id="exceptions">
             <h2>Exception Handling</h2>
             <p>
                 To catch unhandled exceptions we can use ExceptionFilters. Filters run within the MVC action invocation pipeline, after MVC
@@ -18,7 +18,7 @@ class ExceptionHandling extends React.Component {
             <figure>
                 <figcaption>CustomExceptionFilterAttribute.cs</figcaption>
                 <pre>
-                    <code className="language-csharp" contenteditable spellcheck="false">
+                    <code className="language-csharp">
 {`
 public class CustomExceptionFilterAttribute : ExceptionFilterAttribute
 {
@@ -53,7 +53,7 @@ public class CustomExceptionFilterAttribute : ExceptionFilterAttribute
             <figure>
                 <figcaption>Startup.cs</figcaption>
                 <pre>
-<code className="language-csharp" contenteditable spellcheck="false">
+<code className="language-csharp">
 {`
 // Add framework services.
 services.AddMvc(options =>
@@ -71,7 +71,7 @@ services.AddMvc(options =>
             <figure>
                 <figcaption>MyController.cs</figcaption>
                 <pre>
-                <code className="language-csharp" contenteditable spellcheck="false">
+                <code className="language-csharp">
 {`
 [HttpGet]
 public IActionResult Get()

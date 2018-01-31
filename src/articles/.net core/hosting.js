@@ -3,7 +3,7 @@ import React from 'react';
 class Hosting extends React.Component {
     render() {
         return (
-            <section>
+            <section id="hosting">
                 <h2>ASP.NET Core Hosting in IIS</h2>
                 <p>References: <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/aspnet-core-module?tabs=aspnetcore2x">https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/aspnet-core-module?tabs=aspnetcore2x</a></p>
 

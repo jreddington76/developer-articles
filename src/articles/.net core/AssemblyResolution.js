@@ -3,7 +3,7 @@ import React from 'react';
 class AssemblyResolution extends React.Component {
     render() {
         return (
-            <section>
+            <section id="assembly">
             <h2>Which assembly does my application use?</h2>
             <p>.NET will look for the assembly, with the version number against which the code was compiled, first in the GAC
                 then in local files - check out
