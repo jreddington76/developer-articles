@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Header from './js/components/Header';
 import Footer from './js/components/Footer';
 import Home from './js/components/Home';
+import AspNet from './articles/asp.net/AspNet';
 import NetCore from './articles/.net core/NetCore';
 import JavaScript from './articles/javascript/Javascript';
 import NotFound from './js/components/NotFound';
@@ -21,6 +22,7 @@ class App extends React.Component {
   
                      <Switch>
                          <Route exact path="/" component={Home} />
+                         <Route path="/aspnet" component={AspNet} />
                          <Route path="/netcore" component={NetCore} />
                          <Route path="/javascript" component={JavaScript} />
                          <Route path="*" component={NotFound} />
