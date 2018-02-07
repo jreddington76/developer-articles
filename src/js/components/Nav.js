@@ -29,6 +29,11 @@ export default class Nav extends React.Component {
                 <span className="nav-link" href="#">JavaScript</span>
               </Link>
             </li>
+            <li className="nav-item">
+              <Link to="/misc">
+                <span className="nav-link" href="#">Miscellaneous</span>
+              </Link>
+            </li>
           </ul>
           <form className="form-inline my-2 my-lg-0">
             <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />

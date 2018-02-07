@@ -36,10 +36,10 @@ An instance of the requested webform is created
 Events are processed
 the HTML is generated and sent to the client
 The webform is immediately destroyed
-
-<h3>ViewState</h3>
-
-The ViewState travels with every request and response in a hidden field called __VIEWSTATE - not stored on client or server.
+</p>
+                <h3>ViewState</h3>
+                <p>
+                    The ViewState travels with every request and response in a hidden field called __VIEWSTATE - not stored on client or server.
 The value of this field is the data stored in ViewState in base64-encoded string format in Page_Init event ViewState restoration occurs.
 This means that the base64 value of the hidden viewstate field is decoded and the data is stored in the ViewState object.
 The viewstate data is lost if the user navigates away from the page or closes the browser
@@ -56,11 +56,10 @@ to use:
 
 ViewState["key"] = 20;
 var value = (int)ViewState["key"];
-
-
-<h3>Events</h3>
-
-Events can occur at 3 levels:
+</p>
+                <h3>Events</h3>
+                <p>
+                    Events can occur at 3 levels:
 Application Level (Application_Start, Session_Start, etc)
 Page Level (Page_Load)
 Control Level (Button click)
@@ -74,7 +73,7 @@ Application State
 
 Sessions State available across all pages in the current session - single-user global data.
 Session state variables are stored on the web server and are cleared when the users' session times-out - default is 20 minutes.
-To change this, add timeout attribute to sessionState element in web.config - <sessionState mode="InProc" timeout="60"></sessionState>
+To change this, add timeout attribute to sessionState element in web.config - &lt;sessionState mode="InProc" timeout="60"&gt;&lt;/sessionState&lt;
 
 Application State available across all pages and all sessions - multi-user global data.
 Application state varaibles are stored on the server and cleared when the process hosting the application is restarted.
@@ -89,7 +88,7 @@ Stored as a cookie so if new instance of browser is opened while another instanc
 To get new session id:
 close existing browser window and the open a new instance of the browser
 open a new instance of a different browser
-use cookie-less sessions - <sessionState mode="InProc" cookieless="true"></sessionState>
+use cookie-less sessions - &lt;sessionState mode="InProc" cookieless="true"&gt;&lt;/sessionState&gt;
 using cookieless sessions adds the session id to the url
 
 to use:
@@ -104,11 +103,10 @@ Application State
 
 Application["key"] = 20;
 var value = (int)Application["key"];
-
-
-<h3>Server Control Events</h3>
-
-When a button is clicked, the form is posted to the server, the webpage is created, page events are triggered, control events are triggered,
+</p>
+                <h3>Server Control Events</h3>
+                <p>
+                    When a button is clicked, the form is posted to the server, the webpage is created, page events are triggered, control events are triggered,
 html is rendered and sent back to the browser, page is destroyed
 
 Postback events - these events submit the web page immediately to the server for processing.  Click event of a button control is an example of a PostBack event.
@@ -145,7 +143,7 @@ Validation Controls
 
 ASP.NET ships with 6 validation controls - RequiredFieldValidator, RangeValidator, RegularExpressionValidator, CompareValidator, CustomValidator, ValidationSummary
 </p>
-            </section>
+            </section >
         );
     }
 }

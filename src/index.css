@@ -3,12 +3,6 @@ body, html {
   overflow: hidden;
 }
 
-#left {
-  position: fixed;
-  top: 60px;
-  bottom: 0;
-}
-
 .wrap {
   height: 100%;
   overflow: auto;
@@ -27,8 +21,20 @@ pre {
   overflow: auto;
 }
 
+pre[class*="language-"] {
+  padding: 0;
+}
+
 pre>code {
   display: block;
   padding: 1rem;
   word-wrap: normal;
+}
+
+@media (min-width: 768px) {
+  #left {
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+  }
 }

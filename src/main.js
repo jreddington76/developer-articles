@@ -8,6 +8,7 @@ import Home from './js/components/Home';
 import AspNet from './articles/asp.net/AspNet';
 import NetCore from './articles/.net core/NetCore';
 import JavaScript from './articles/javascript/Javascript';
+import Misc from './articles/misc/Misc';
 import NotFound from './js/components/NotFound';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -25,6 +26,7 @@ class App extends React.Component {
                          <Route path="/aspnet" component={AspNet} />
                          <Route path="/netcore" component={NetCore} />
                          <Route path="/javascript" component={JavaScript} />
+                         <Route path="/misc" component={Misc} />
                          <Route path="*" component={NotFound} />
                      </Switch>
 
