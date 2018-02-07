@@ -3,8 +3,10 @@ import React from 'react';
 class Variables extends React.Component {
     render() {
         return (
-            <section id="variables">            
-variables - space in memory to add and retrieve data
+            <section id="variables">
+                <h2>Variables</h2>
+                <p>
+                    variables - space in memory to add and retrieve data
 
 int - whole number (between +- 2 billion 147 million)
 string
@@ -34,7 +36,8 @@ Scope
 
 variable is only alive for the code block it was defined in (or child code blocks)
 i.e. the variable i defined in for loop cannot be accessed outside of for loop code block
-       </section >
+</p>
+            </section >
         );
     }
 }
