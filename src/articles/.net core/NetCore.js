@@ -10,7 +10,7 @@ class NetCore extends React.Component {
         return (
             <div>
                 <div className="row">
-                    <div id="left" className="col col-md-2 offset-1">
+                    <div className="col col-md-2 offset-1 left">
                         <nav className="nav flex-column">
                             <a className="nav-link active" href="#hosting">Hosting</a>
                             <a className="nav-link" href="#exceptions">Exception Handling</a>

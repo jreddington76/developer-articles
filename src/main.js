@@ -13,6 +13,7 @@ import Misc from './articles/misc/Misc';
 import NotFound from './js/components/NotFound';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
 class App extends React.Component {

@@ -64,15 +64,15 @@ car.Model = "116D Sport";
                     <pre>
                         <code className="language-csharp">
                             {`var car = new Car
-                            {
-                                Make = "BMW",
-                            Model = "116D Sport"
-            };
+{
+    Make = "BMW",
+    Model = "116D Sport"
+};
 `}
                         </code>
                     </pre>
                 </figure>
-                <h3>Constructor</h3>
+                <h5 id="constructor">Constructor</h5>
                 <p>
                     a special method that is called when the class is instantiated.  It allows you to execute code immediately when the object is created.
 all classes have a constructor (even if the class does not have a construcotr defined. the .net framework will add a default constructor when class is compiled)
@@ -91,7 +91,7 @@ the .net garbage collection takes place at an indeterminate time in the future s
 
 Copying an object simply creates a new pointer that points to the same object [the same memory address]
 </p>
-                <h3>Abstract Classes</h3>
+                <h5 id="abstract">Abstract Classes</h5>
                 <p>
                     We cannot create an object of Abstract Class but we can create a reference of it.
 

@@ -4,8 +4,8 @@ class Basics extends React.Component {
     render() {
         return (
             <section id="basics">
-                <h2 id="valuetypes">Basics</h2>
-                <h3>Value Types</h3>
+                <h4>Basics</h4>
+                <h5 id="valuetypes">Value Types</h5>
                 <p>
                     In C#, all the "things" declared with the following list of type declarations are Value types (because they are from System.ValueType):
                 </p>
@@ -26,7 +26,7 @@ class Basics extends React.Component {
                     <li>ulong</li>
                     <li>ushort</li>
                 </ul>
-                <h3>Reference Types</h3>
+                <h5 id="referencetypes">Reference Types</h5>
                 <p>
                     All the "things" declared with the types in this list are Reference types (and inherit from System.Object, except, of course, for object which is the System.Object object):
                 </p>
@@ -37,12 +37,12 @@ class Basics extends React.Component {
                     <li>object</li>
                     <li>string</li>
                 </ul>
-                <h3>Casing</h3>
+                <h5 id="casing">Casing</h5>
                 <p>
                     camelCase [aka lower camelcase] - lowercase first letter then uppercase for the first letter of each subsequent word
                     upper camel case - as above but first letter is uppercase
                 </p>
-                <h3>Comments</h3>
+                <h5 id="comments">Comments</h5>
                 <figure>
                     <pre>
                         <code className="language-csharp">
@@ -61,7 +61,7 @@ class Basics extends React.Component {
                         </code>
                     </pre>
                 </figure>
-       </section >
+            </section >
         );
     }
 }

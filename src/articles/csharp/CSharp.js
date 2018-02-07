@@ -9,25 +9,38 @@ import Variables from './Variables';
 class CSharp extends React.Component {
     render() {
         return (
-            <div>
-                <div className="row">
-                    <div id="left" className="col col-md-2 offset-1">
-                        <nav className="nav flex-column">
-                            <a className="nav-link active" href="#basics">Basics</a>
+            <div className="row">
+                <div className="col-12 col-md-2 left">
+                    <nav id="content" className="navbar">
+                        <nav className="nav nav-pills flex-column">
+                            <a className="nav-link" href="#basics">Basics</a>
+                            <nav className="nav nav-pills flex-column">
+                                <a className="nav-link ml-3 my-1" href="#valuetypes">Value Types</a>
+                                <a className="nav-link ml-3 my-1" href="#valuetypes">Value Types</a>
+                                <a className="nav-link ml-3 my-1" href="#casing">Casing</a>
+                                <a className="nav-link ml-3 my-1" href="#comments">Comments</a>
+                            </nav>
                             <a className="nav-link" href="#classes">Classes</a>
+                            <nav className="nav nav-pills flex-column">
+                                <a className="nav-link ml-3 my-1" href="#constructor">Constructor</a>
+                                <a className="nav-link ml-3 my-1" href="#abstract">Abstract Class</a>
+                            </nav>
                             <a className="nav-link" href="#variables">Variables</a>
                             <a className="nav-link" href="#interfaces">Interfaces</a>
                             <a className="nav-link" href="#stackheap">Stack &amp; Heap</a>
                         </nav>
-                    </div>
-                    <div className="col col-md-8 offset-3">
+                    </nav>
+                </div>
+
+                <div className="col-12 col-md-10 offset-md-2">
+                    <div data-spy="scroll" data-target="#content" data-offset="0">
                         <article>
                             <h1>C#</h1>
                             <Basics />
                             <Classes />
-                            <Variables/>
+                            <Variables />
                             <Interfaces />
-                            <StackHeap/>
+                            <StackHeap />
                         </article>
                     </div>
                 </div>
