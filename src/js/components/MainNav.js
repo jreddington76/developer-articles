@@ -34,7 +34,7 @@ export default class MainNav extends React.Component {
 
   render() {
     return (
-      <Navbar className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <Navbar className="navbar-expand-lg navbar-dark bg-dark fixed-top">
         <NavbarToggler onClick={this.toggle} />
         <NavbarBrand href="/">reactstrap</NavbarBrand>
         <Collapse isOpen={this.state.isOpen} navbar>
