@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    entry: './src/main.js',
+    entry: './src/index.js',
     output: {
         path: __dirname + "/public/",
         filename: 'bundle.js',

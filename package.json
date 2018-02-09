@@ -2,7 +2,7 @@
   "name": "developer-articles",
   "version": "1.0.0",
   "description": "An attempt to organize my brain",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --colors --watch --inline --hot",
     "build": "webpack",
@@ -16,8 +16,10 @@
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
+    "classnames": "^2.2.5",
     "history": "^4.7.2",
     "prismjs": "^1.9.0",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-popper": "^0.8.2",

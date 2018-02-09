@@ -18,6 +18,38 @@ h5 {
   margin-top: 1em;
 }
 
+footer {
+  background-color: #273547;
+  font-family: 'Source Sans Pro', 'Lucida Grande', sans-serif;
+  margin-top: 60px;
+}
+
+footer h3 {
+  color: #a4bbd7;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.286;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 0.107em;
+  padding-bottom: 0.107em;
+}
+
+footer hr {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-width: 1px 0 0 0;
+}
+
+footer ul {
+  padding-left: 0;
+}
+
+footer li {
+  color: white;
+  list-style: none;
+  padding-left: 0;
+}
+
 .wrap {
   height: 100%;
   overflow: auto;

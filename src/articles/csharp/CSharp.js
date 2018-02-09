@@ -1,6 +1,8 @@
 import React from 'react';
 import { Row, Col, Navbar, Nav, NavItem, NavLink } from 'reactstrap';
+import classnames from 'classnames';
 
+import NavList from '../../js/components/NavList';
 import Basics from './Basics';
 import Classes from './Classes';
 import Interfaces from './Interfaces';
@@ -8,40 +10,68 @@ import StackHeap from './StackHeap';
 import Variables from './Variables';
 
 class CSharp extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            active: false,
+            basicLinks: [
+                {
+                    id: 1,
+                    href: '#valuetypes',
+                    text: 'Value Types'
+                },
+                {
+                    id: 2,
+                    href: '#referencetypes',
+                    text: 'Reference Types'
+                },
+                {
+                    id: 3,
+                    href: '#casing',
+                    text: 'Casing'
+                },
+                {
+                    id: 4,
+                    href: '#comments',
+                    text: 'Comments'
+                }
+            ],
+            classLinks: [
+                {
+                    id: 1,
+                    href: '#constructor',
+                    text: 'Constructor'
+                },
+                {
+                    id: 2,
+                    href: '#abstractclass',
+                    text: 'Abstract Class'
+                }
+            ]
+        }
+    }
+
+    click() {
+        this.setState({
+            active: true
+        });
+    }
+
     render() {
+        let classes = classnames({ active: this.state.active });
         return (
             <Row>
                 <Col xs="12" md="2" className="left">
                     <Navbar id="content">
                         <Nav className="nav-pills flex-column">
                             <NavItem>
-                                <NavLink href="#basics">Basics</NavLink>
+                                <NavLink href="#basics" className={classes} onClick={this.click.bind(this)}>Basics</NavLink>
                             </NavItem>
-                            <Nav className="nav-pills flex-column">
-                                <NavItem>
-                                    <NavLink href="#valuetypes" className="ml-3 my-1">Value Types</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink href="#referencetypes" className="ml-3 my-1">Reference Types</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink href="#casing" className="ml-3 my-1">Casing</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink href="#comments" className="ml-3 my-1">Comments</NavLink>
-                                </NavItem>
-                            </Nav>
+                            <NavList items={this.state.basicLinks} />
                             <NavItem>
                                 <NavLink href="#classes">Classes</NavLink>
                             </NavItem>
-                            <Nav className="nav-pills flex-column">
-                            <NavItem>
-                                    <NavLink href="#constructor" className="ml-3 my-1">Constructor</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink href="#abstract" className="ml-3 my-1">Abstract Class</NavLink>
-                                </NavItem>
-                            </Nav>
+                            <NavList items={this.state.classLinks} />
                             <NavItem>
                                 <NavLink href="#variables">Variables</NavLink>
                             </NavItem>
